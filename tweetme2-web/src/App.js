@@ -18,12 +18,21 @@ function loadTweets(callback) {
   }
   xhr.send()
 }
+
+function LikeBtn(props) {
+  const {tweet} = props
+  const className = props.className ? props.className : 'btn btn-primary btn-small'
+  return <button className={className}>{tweet.likes} Likes</button>
+}
  
 function Tweet(props) {
   const {tweet} = props
   const className = props.className ? props.className : 'col-10 mx-auto col-md-6'
   return <div className={className}>
     <p>{tweet.id} - {tweet.content}</p>
+    <div className='btn btn-group'>
+      <LikeBtn tweet={tweet} />
+    </div>
 
   </div>
 }
@@ -35,7 +44,6 @@ function App() {
 
   useEffect(() => {
     const myCallback = (response, status) => {
-      console.log(response, status)
       if (status === 200){
         setTweets(response)
       } else {
