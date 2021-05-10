@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {createTweet, loadTweets} from '../lookup'
+import {apiTweetCreate, apiTweetList} from './lookup'
 
 
 export function TweetsComponent(props) {
@@ -20,7 +20,7 @@ export function TweetsComponent(props) {
   const handleSubmit = (event) => {
     event.preventDefault()
     const newVal = textAreaRef.current.value
-    createTweet(newVal, handleBackendUpdate)
+    apiTweetCreate(newVal, handleBackendUpdate)
     textAreaRef.current.value = ''
   }
   
@@ -52,7 +52,7 @@ export function TweetsList(props) {
        
         useEffect(() => {
           if (tweetsDidSet === false) {
-            const myCallback = (response, status) => {
+            const handleTweetListLookup = (response, status) => {
               if (status === 200){
                 setTweetsInit(response)
                 setTweetsDidSet(true)
@@ -60,7 +60,7 @@ export function TweetsList(props) {
                 alert("There was an error")
               }
             }
-            loadTweets(myCallback)
+            apiTweetList(handleTweetListLookup)
           }
         }, [tweetsInit, tweetsDidSet, setTweetsDidSet])
       
