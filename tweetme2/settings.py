@@ -42,11 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts',
+    'profiles',
     'tweets',
     'rest_framework',
     'corsheaders',
     
-
 ]
 
 MIDDLEWARE = [
