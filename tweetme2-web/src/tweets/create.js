@@ -12,7 +12,6 @@ export function TweetCreate(props) {
         if (status === 201) {
         didTweet(response)
         } else {
-        console.log(response)
         alert("An error occured, please try again.")
         }
     }

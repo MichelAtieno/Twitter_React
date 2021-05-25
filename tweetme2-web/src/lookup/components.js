@@ -45,10 +45,10 @@ export function backendLookup(method, endpoint, callback, data) {
                 callback(xhr.response, xhr.status)  
             }
             xhr.onerror = function (e) {
-            console.log(e)
+            
             callback({"message": "The request was an error"}, 400)
             }
-            console.log(jsonData)
+            
             xhr.send(jsonData)
 }
 
