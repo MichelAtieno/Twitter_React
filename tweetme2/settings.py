@@ -46,6 +46,9 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+#
 LOGIN_URL = "/login"
 APPEND_SLASH=False
 
@@ -101,6 +104,21 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'tweetme2.wsgi.application'
 
+
+# Database
+# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'twitter_app',
+        'USER': 'michel',
+    'PASSWORD': 'mishy',
+    }
+}
+
+# Password validation
+# https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
