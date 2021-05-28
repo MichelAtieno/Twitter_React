@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/michel/Desktop/Machine Learning/Twitter_React/virtual"
+VIRTUAL_ENV="/home/michel/Desktop/Projects 2021/Twitter_React/virtual"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
