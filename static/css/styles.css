@@ -55,9 +55,6 @@ nav {
 }
 
 @media screen and (max-width:1024px){
-    nav {
-        display: inline-block;
-    }
     
     .nav-links {
         width: 60%;
@@ -67,10 +64,6 @@ nav {
 @media screen and (max-width:768px){
     body {
         overflow-x: hidden;
-    }
-
-    nav {
-        display: inline-block;
     }
 
     .nav-links{
